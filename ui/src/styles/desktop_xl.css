@@ -1,0 +1,35 @@
+
+@media (min-width: 1339px) {
+    .content {
+        width: 690px;
+    }
+}
+
+
+@media (min-width: 1440px) {
+
+    .topBar {
+        width: 90%;
+        left: 0px;
+        right: 0px;
+        margin: 0 auto;
+    }
+
+    .sidebar{
+        width: 5%;
+        height: 120%;
+        position: fixed;
+        top: 0px;
+        background-color: black;        
+        z-index: 20;
+    }
+    .sidebar.left{
+         left: 0px;
+    }
+    .sidebar.right{
+        right:0px;
+    }
+    .settingsBar{
+      right: 100px; 
+    } 
+}

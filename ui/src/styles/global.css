@@ -1,0 +1,311 @@
+
+:root{     
+  --sepia: #F5EDDD;
+  --selection: #FFAB1F;
+  --grey: #C4C4C4;
+  --white: white;
+  --black: black;
+  --bg-box: #ECECEC;
+
+  --font-size-head: 1.5rem; 
+  --font-size-sect: 1.125rem;
+  --font-size: 1rem;
+  --font-size-mid: 0.875rem;
+  --font-size-small: 0.75rem;
+}
+
+:root.white{
+    --bg-color: white;
+    --text-color: black;
+    --bg-box: #ECECEC;
+}
+
+:root.sepia{
+    --bg-color: var(--sepia);
+    --text-color: black;
+    --bg-box: #ECECEC;
+}
+
+:root.black{
+    --bg-color:black;
+    --text-color: #E0E0E0;
+    --bg-box: #ECECEC;
+}
+
+:root.left{
+    --text-alginment: left;
+}
+
+:root.center{
+    --text-alginment: center;
+}
+
+:root.size-0{
+    --font-size-head: 1.125rem; 
+    --font-size-sect: 0.75rem;
+    --font-size: 0.625rem;
+    --font-size-mid: 0.5rem;
+    --font-size-small: 0.375rem;
+}
+:root.size-1{
+    --font-size-head: 1.25rem; 
+    --font-size-sect: 0.875rem;
+    --font-size: 0.75rem;
+    --font-size-mid: 0.625rem;
+    --font-size-small: 0.5rem;
+}
+:root.size-2{
+    --font-size-head: 1.375rem; 
+    --font-size-sect: 1rem;
+    --font-size: 0.875rem;
+    --font-size-mid: 0.75rem;
+    --font-size-small: 0.625rem;
+}
+:root.size-3{
+    --font-size-head: 1.5rem; 
+    --font-size-sect: 1.125rem;
+    --font-size: 1rem;
+    --font-size-mid: 0.875rem;
+    --font-size-small: 0.75rem;
+}
+:root.size-4{
+    --font-size-head: 1.625rem; 
+    --font-size-sect: 1.25rem;
+    --font-size: 1.125rem;
+    --font-size-mid: 1rem;
+    --font-size-small: 0.875rem;
+}
+:root.size-5{
+    --font-size-head: 1.75rem; 
+    --font-size-sect: 1.375rem;
+    --font-size: 1.25rem;
+    --font-size-mid: 1.125rem;
+    --font-size-small: 1rem;
+}
+:root.size-6{
+    --font-size-head: 1.875rem; 
+    --font-size-sect: 1.5rem;
+    --font-size: 1.375rem;
+    --font-size-mid: 1.25rem;
+    --font-size-small: 1.125rem;
+}
+
+
+* {
+    font-family: Asty Medium, 'Chaparral Pro',  sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+    letter-spacing: 0em;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+/* FONT SETTINGS */
+h1 {
+    font-family: Asty Bold, 'Chaparral Pro',  sans-serif;
+    font-size: var( --font-size-head);
+}
+p.section{
+    font-size: var(--font-size-sect);
+}
+div.subtitle p, p.primaryText, .div.body p, .content{
+    font-size: var(--font-size);
+}
+.author, .authorName, .summary{
+    font-size: var(--font-size-mid);
+}
+.authorAttribute, .authorRole, div.breadcrumb p{
+    font-size: var(--font-size-small);
+}
+
+/* GENERAL CONTENT */
+.content {
+    position: relative;
+    top: 55px;
+    width: 340px;
+    margin:auto;
+    text-align: var(--text-alginment);
+}
+
+.body{
+    margin-top: 40px;    
+}
+
+.breadcrumb{
+    margin-top: 38px;
+}
+
+.innerContent{
+    margin-top: 27px;
+}
+
+.subtitle{
+     margin-top: 8px;
+}
+
+.authors{
+    margin-top: 15px;
+}
+
+.summary{
+    margin-top: 26px;
+}
+
+
+.topBar{
+    display: flex;
+    background:var(--bg-box);
+    width: 100%;
+    height: 55px;
+    margin: 0;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.leftContainer, .rightContainer{
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.leftContainer{
+    margin-left:40px;
+}
+
+.rightContainer{
+    margin-right:40px;
+}
+
+.leftContainer .headerIcon.spacer{
+    margin-left: 30px;
+}
+
+.rightContainer .headerIcon.spacer{
+    margin-right: 30px;
+}
+
+.headerIcon:hover{
+    cursor: pointer;
+}
+
+
+/* SettingsBar */
+.settingsBar{
+    position: fixed;
+    right: 20px;
+    top: 80px;
+
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-box);
+    border-radius: 10px;
+    padding: 16px;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    z-index: 10;
+} 
+
+.settingsContainer, .colorSwitcher, .alignmentSwitcher{
+    display: flex;
+    flex-direction: row;
+}
+
+.colorSwitcher div{
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--white);
+    border-radius: 100px;
+}
+.colorSwitcher div:hover, .alignmentSwitcher div:hover{ 
+    cursor: pointer;
+}
+
+.colorSwitcher div.selected{
+    border-color: var(--selection);
+}
+
+.alignmentSwitcher div.selected svg path {
+    fill-opacity: 1;     
+}
+.alignmentSwitcher div svg path {
+    fill-opacity: 0.3;     
+}
+
+
+.colorSwitcher .switchWhite{
+    background:var(--white);
+   
+}
+.colorSwitcher .switchSepia{
+    background:var(--sepia);
+  
+}
+
+.colorSwitcher .switchBlack{
+    background:var(--black);
+}
+
+.colorSwitcher div, .alignmentSwitcher div:first-child{
+    margin-right: 17px
+}
+
+.dot{
+    background: var(--grey);
+    width: 8px;
+    height: 8px;
+    margin: auto 12px;
+    border-radius:100px;
+}
+
+.dot.selected{
+    background: var(--selection);
+}
+
+.dot:hover, .smallLetter:hover, .bigLetter:hover{
+    cursor: pointer;
+}
+
+.settingsContainer {
+    justify-content: space-between;
+}
+
+.settingsContainer:first-child {
+    margin-bottom: 40px;
+}
+
+.smallLetter{
+    font-size: 1rem;
+    margin:auto;
+    margin-right: 15px;
+}
+.bigLetter{
+    font-size:1.5rem;
+    margin:auto;
+    margin-left:15px
+}
+
+
+
+.mark{
+    background-color: #FFAB1F;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "Asty Black";
+    src: url("fonts/asty-cf-web/black/cfastystd-black-webfont.eot");
+    src: url("fonts/asty-cf-web/black/cfastystd-black-webfont.woff") format("woff"),
+    url("fonts/asty-cf-web/black/cfastystd-black-webfont.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Asty Bold";
+    src: url("fonts/asty-cf-web/bold/cfastystd-bold-webfont.eot");
+    src: url("fonts/asty-cf-web/bold/cfastystd-bold-webfont.woff") format("woff"),
+    url("fonts/asty-cf-web/bold/cfastystd-bold-webfont.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Asty Hairline";
+    src: url("fonts/asty-cf-web/hairline/cfastystd-hairline-webfont.eot");
+    src: url("fonts/asty-cf-web/hairline/cfastystd-hairline-webfont.woff") format("woff"),
+    url("fonts/asty-cf-web/hairline/cfastystd-hairline-webfont.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Asty Light";
+    src: url("fonts/asty-cf-web/light/cfastystd-light-webfont.eot");
+    src: url("fonts/asty-cf-web/light/cfastystd-light-webfont.woff") format("woff"),
+    url("fonts/asty-cf-web/light/cfastystd-light-webfont.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Asty Medium";
+    src: url("fonts/asty-cf-web/medium/cfastystd-medium-webfont.eot");
+    src: url("fonts/asty-cf-web/medium/cfastystd-medium-webfont.woff") format("woff"),
+    url("fonts/asty-cf-web/medium/cfastystd-medium-webfont.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Asty Thin";
+    src: url("fonts/asty-cf-web/thin/cfastystd-thin-webfont.eot");
+    src: url("fonts/asty-cf-web/thin/cfastystd-thin-webfont.woff") format("woff"),
+    url("fonts/asty-cf-web/thin/cfastystd-thin-webfont.woff2") format("woff2");
+}
+
