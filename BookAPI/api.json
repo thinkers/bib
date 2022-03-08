@@ -1,0 +1,767 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "3.0.0",
+        "title": "BookApi",
+        "description": "Book API for books and magazines."
+    },
+    "servers": [
+        {
+            "url": "http://130.61.250.60:3000/api/"
+        }
+    ],
+    "paths": {
+        "/magazines": {
+            "get": {
+                "summary": "Retrieves list of all available Magazines",
+                "description": "Returns list of all magazines",
+                "operationId": "getAll",
+                "tags": [
+                    "Magazines"
+                ],
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": false,
+                        "description": "Query String to be searched for in title, subtitle, summary, content and authors",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "description": "Determines which type of magazines should be returned (article_nomologia, article_nomothesia,article_scientific, article_theory)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "product",
+                        "in": "query",
+                        "required": false,
+                        "description": "Determines which the product of the magazines which are returned (Ποινικά Χρονικά or Χρονικά Ιδιωτικού Δικαίου)",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "exclude",
+                        "in": "query",
+                        "required": false,
+                        "description": "Exact field name which should not me queried for (eq. the main content should not be queried for there param is ?exclude=_content",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of Magazines",
+                        "headers": {},
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Magazines"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/magazine/{id}": {
+            "get": {
+                "summary": "Retrieves full detailed Mazine content",
+                "description": "Returns magazine with all details",
+                "operationId": "getMagazine",
+                "tags": [
+                    "Magazines"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "exclude",
+                        "in": "query",
+                        "required": false,
+                        "description": "Exact field name which should not me queried for (eq. the main content should not be queried for there param is ?exclude=_content",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Detailed Magazine",
+                        "headers": {},
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Magazine"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/nomologia/{id}": {
+            "get": {
+                "summary": "Retrieves full detailed Mazine of type Nomologia",
+                "description": "Returns magazine with all details",
+                "operationId": "getMagazine",
+                "tags": [
+                    "Magazines"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "exclude",
+                        "in": "query",
+                        "required": false,
+                        "description": "Exact field name which should not me queried for (eq. the main content should not be queried for there param is ?exclude=_content",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Detailed Magazine",
+                        "headers": {},
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Magazine"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/nomothesia/{id}": {
+            "get": {
+                "summary": "Retrieves full detailed Mazine of type Nomothesia",
+                "description": "Returns magazine with all details",
+                "operationId": "getMagazine",
+                "tags": [
+                    "Magazines"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "exclude",
+                        "in": "query",
+                        "required": false,
+                        "description": "Exact field name which should not me queried for (eq. the main content should not be queried for there param is ?exclude=_content",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Detailed Magazine",
+                        "headers": {},
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Magazine"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/scientific/{id}": {
+            "get": {
+                "summary": "Retrieves full detailed Mazine of type Scientific",
+                "description": "Returns magazine with all details",
+                "operationId": "getMagazine",
+                "tags": [
+                    "Magazines"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "exclude",
+                        "in": "query",
+                        "required": false,
+                        "description": "Exact field name which should not me queried for (eq. the main content should not be queried for there param is ?exclude=_content",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Detailed Magazine",
+                        "headers": {},
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Magazine"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/theory/{id}": {
+            "get": {
+                "summary": "Retrieves full detailed Mazine of type Theory",
+                "description": "Returns magazine with all details",
+                "operationId": "getMagazine",
+                "tags": [
+                    "Magazines"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "exclude",
+                        "in": "query",
+                        "required": false,
+                        "description": "Exact field name which should not me queried for (eq. the main content should not be queried for there param is ?exclude=_content",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Detailed Magazine",
+                        "headers": {},
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Magazine"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/books": {
+            "get": {
+                "summary": "Retrieves list of all available Books",
+                "description": "Returns list of all Books",
+                "operationId": "getAll",
+                "tags": [
+                    "Books"
+                ],
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": false,
+                        "description": "Query String to be searched for all fields",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "exclude",
+                        "in": "query",
+                        "required": false,
+                        "description": "Exact field name which should not me queried for.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of Books",
+                        "headers": {},
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Books"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/book/{filename}": {
+            "get": {
+                "summary": "Retrieves full detailed Bool",
+                "description": "Returns book with all details",
+                "operationId": "getBook",
+                "tags": [
+                    "Book"
+                ],
+                "parameters": [
+                    {
+                        "name": "filename",
+                        "in": "path",
+                        "description": "filename",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "exclude",
+                        "in": "query",
+                        "required": false,
+                        "description": "Exact field name which should not me queried for (eq. the main content should not be queried for there param is ?exclude=_content",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Detailed Magazine",
+                        "headers": {},
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Magazine"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Magazines": {
+                "type": "array",
+                "description": "Array of Magazine items",
+                "items": {
+                    "$ref": "#/components/schemas/Magazine"
+                }
+            },
+            "Magazine": {
+                "type": "object",
+                "required": [
+                    "_id"
+                ],
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "unique identifier"
+                    },
+                    "_type": {
+                        "type": "string",
+                        "description": "type of the article"
+                    },
+                    "_title": {
+                        "type": "string",
+                        "description": "title of the article"
+                    },
+                    "_subtitle": {
+                        "type": "string",
+                        "description": "subtitle of the article"
+                    },
+                    "_authors": {
+                        "type": "array",
+                        "description": "Array of Authors",
+                        "items": {
+                            "$ref": "#/components/schemas/Author"
+                        }
+                    },
+                    "_numberOfPages": {
+                        "type": "string",
+                        "description": "number of pages"
+                    },
+                    "_summary": {
+                        "type": "string",
+                        "description": "Summary"
+                    },
+                    "_content": {
+                        "type": "string",
+                        "description": "Main content"
+                    },
+                    "_annotationAuthor": {
+                        "description": "Annotation Author",
+                        "items": {
+                            "$ref": "#/components/schemas/Author"
+                        }
+                    },
+                    "_annotation": {
+                        "type": "string",
+                        "description": "Annotation fo the annotation author"
+                    },
+                    "_decision": {
+                        "type": "string",
+                        "description": "Descision"
+                    },
+                    "_relations": {
+                        "type": "string",
+                        "description": "Relation"
+                    },
+                    "_relationsTheories": {
+                        "type": "string",
+                        "description": "Relation Theories"
+                    },
+                    "_relationsNomologies": {
+                        "type": "string",
+                        "description": "Relation Nomologia"
+                    },
+                    "_relationsScientific": {
+                        "type": "string",
+                        "description": "Relation Scientific"
+                    },
+                    "_relationsNomothesies": {
+                        "type": "string",
+                        "description": "Relation Nomothesies"
+                    },
+                    "_categories": {
+                        "type": "array",
+                        "description": "Array of name of category and description of category",
+                        "items": {
+                            "$ref": "#/components/schemas/Taxonomie"
+                        }
+                    },
+                    "_issue": {
+                        "type": "array",
+                        "description": "Array of name of issue and description of issue",
+                        "items": {
+                            "$ref": "#/components/schemas/Taxonomie"
+                        }
+                    },
+                    "_thematics": {
+                        "type": "array",
+                        "description": "Array of name of thematics and description of thematics",
+                        "items": {
+                            "$ref": "#/components/schemas/Taxonomie"
+                        }
+                    },
+                    "_product": {
+                        "type": "array",
+                        "description": "Array of name of product and description of product",
+                        "items": {
+                            "$ref": "#/components/schemas/Taxonomie"
+                        }
+                    }
+                }
+            },
+            "Author": {
+                "type": "object",
+                "properties": {
+                    "_role": {
+                        "type": "string",
+                        "description": "Role of the Author"
+                    },
+                    "_firstname": {
+                        "type": "string",
+                        "description": "Firstname of the Author"
+                    },
+                    "_lastname": {
+                        "type": "string",
+                        "description": "Lastname of the Author"
+                    },
+                    "_extraRole": {
+                        "type": "string",
+                        "description": "Extra role of the author"
+                    }
+                }
+            },
+            "Taxonomie": {
+                "type": "object",
+                "properties": {
+                    "_name": {
+                        "type": "string"
+                    },
+                    "_description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Books": {
+                "type": "array",
+                "description": "Array of Book items",
+                "items": {
+                    "$ref": "#/components/schemas/Book"
+                }
+            },
+            "Book": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "identifier"
+                    },
+                    "_name": {
+                        "type": "string",
+                        "description": "Book name"
+                    },
+                    "_title": {
+                        "type": "string",
+                        "description": "Title of the book"
+                    },
+                    "_subtitle": {
+                        "type": "string",
+                        "description": "Subtitle of the book"
+                    },
+                    "_abstract": {
+                        "type": "string",
+                        "description": "Abstract of the book"
+                    },
+                    "_author": {
+                        "type": "array",
+                        "description": "Array of authors",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "_publisher": {
+                        "type": "string",
+                        "description": "Publisher of the book"
+                    },
+                    "_language": {
+                        "type": "string",
+                        "description": "Language of the book"
+                    },
+                    "_contactData": {
+                        "type": "object",
+                        "description": "Contact Data ",
+                        "items": {
+                            "$ref": "#/components/schemas/ContactData"
+                        }
+                    },
+                    "_edition": {
+                        "type": "string",
+                        "description": "Edition of the book"
+                    },
+                    "_publicationDate": {
+                        "type": "string",
+                        "description": "Publication Date of the book"
+                    },
+                    "_copyright": {
+                        "type": "string",
+                        "description": "Copyright string of the book"
+                    },
+                    "_identifier": {
+                        "type": "object",
+                        "description": "Object of identifiers",
+                        "items": {
+                            "$ref": "#/components/schemas/Identifier"
+                        }
+                    },
+                    "_translations": {
+                        "type": "object",
+                        "description": "Object of identifiers",
+                        "items": {
+                            "$ref": "#/components/schemas/Translations"
+                        }
+                    },
+                    "_content": {
+                        "type": "array",
+                        "description": "Array of Chapters",
+                        "items": {
+                            "$ref": "#/components/schemas/Chapter"
+                        }
+                    }
+                }
+            },
+            "ContactData": {
+                "type": "object",
+                "properties": {
+                    "_email": {
+                        "type": "string"
+                    },
+                    "_url": {
+                        "type": "string"
+                    },
+                    "_address": {
+                        "type": "string"
+                    },
+                    "_phone": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Identifier": {
+                "type": "object",
+                "properties": {
+                    "_isbn_print": {
+                        "type": "string"
+                    },
+                    "_isbn_epub": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Translations": {
+                "type": "object",
+                "properties": {
+                    "_featChapterReview": {
+                        "type": "string"
+                    },
+                    "_featChapterQuestion": {
+                        "type": "string"
+                    },
+                    "_featChapterAssess": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Chapter": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "_role": {
+                        "type": "string"
+                    },
+                    "_content": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Error": {
+                "type": "object",
+                "required": [
+                    "code",
+                    "message"
+                ],
+                "properties": {
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "BasicAuth": {
+                "type": "http",
+                "scheme": "basic"
+            }
+        }
+    },
+    "security": [
+        {
+            "BasicAuth": []
+        }
+    ]
+}
